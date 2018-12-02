@@ -9,11 +9,15 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug'); // view engine pug/jade
 
 app.get('/', (req, res) => { // html/pug file loated in views folder
-    res.render('index.pug');
+    res.render('index.pug', {
+        title: 'Home'
+    });
 });
 
 app.get('/about', (req, res) => {
-    res.render('about.pug');
+    res.render('about.pug', {
+        title: 'About'
+    });
 });
 
 app.listen(process.env.PORT || 3000, (err) => {
