@@ -8,6 +8,8 @@ require('dotenv').config();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug'); // view engine pug/jade
 
+app.use(express.static('public'));
+
 app.get('/', (req, res) => { // html/pug file loated in views folder
     res.render('index.pug', {
         title: 'Home'
